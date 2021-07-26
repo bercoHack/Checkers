@@ -1,0 +1,2 @@
+include ':app'
+rootProject.name = "Damka_final_game"

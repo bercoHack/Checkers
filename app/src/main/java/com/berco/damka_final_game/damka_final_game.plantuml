@@ -1,0 +1,366 @@
+@startuml
+
+title __DAMKA_FINAL_GAME's Class Diagram__\n
+
+  namespace com.berco.damka_final_game {
+    interface com.berco.damka_final_game.BackAble {
+        {abstract} + onClickBack()
+    }
+  }
+  
+
+  namespace com.berco.damka_final_game {
+    class com.berco.damka_final_game.Controller {
+        - p1Details : String
+        - p2Details : String
+        - player : char
+        + Controller()
+        + gameOver()
+        + getBoard()
+        + getP1()
+        + getP2()
+        + getQueen()
+        + getStepsWinner()
+        + getWinnerString()
+        + movePlayer()
+        + setP1()
+        + setP2()
+        + setPlayer()
+        + startGame()
+    }
+  }
+  
+
+  namespace com.berco.damka_final_game {
+    class com.berco.damka_final_game.CurrentPlayers {
+        {static} - REQUEST_IMAGE_CAPTURE1 : int
+        {static} - REQUEST_IMAGE_CAPTURE2 : int
+        - chPic1 : Button
+        - chPic2 : Button
+        - email1 : EditText
+        - email2 : EditText
+        - gender1 : RadioGroup
+        - gender2 : RadioGroup
+        - mImageBitmap1 : Bitmap
+        - mImageBitmap2 : Bitmap
+        - name1 : EditText
+        - name2 : EditText
+        - pic1 : ImageView
+        - pic2 : ImageView
+        - submit : Button
+        + onActivityResult()
+        + onClick()
+        + onClickBack()
+        + onCreateOptionsMenu()
+        + onOptionsItemSelected()
+        # onCreate()
+    }
+  }
+  
+
+  namespace com.berco.damka_final_game {
+    class com.berco.damka_final_game.Game {
+        - id : long
+        - p1 : String
+        - p2 : String
+        - steps : int
+        - winner : String
+        + Game()
+        + Game()
+        + compareTo()
+        + getId()
+        + getP1()
+        + getP2()
+        + getSteps()
+        + getWinner()
+        + setId()
+        + setSteps()
+        + toString()
+    }
+  }
+  
+
+  namespace com.berco.damka_final_game {
+    class com.berco.damka_final_game.GameDataBase {
+        {static} - COLUMN_ID : String
+        {static} - COLUMN_P1 : String
+        {static} - COLUMN_P2 : String
+        {static} - COLUMN_STEPS : String
+        {static} - COLUMN_WINNER : String
+        {static} - CREATE_TABLE_GAME : String
+        {static} - DATABASE_NAME : String
+        {static} - DATABASE_VERSION : int
+        {static} - TABLE_RECORD : String
+        {static} - allColumns : String[]
+        - database : SQLiteDatabase
+        {static} - games : ArrayList<Game>
+        + GameDataBase()
+        + createRecord()
+        + deleteGameByRow()
+        + getAllRecords()
+        {static} + getGames()
+        + onCreate()
+        + onUpgrade()
+        + setRecord()
+        + updateRecordByRow()
+    }
+  }
+  
+
+  namespace com.berco.damka_final_game {
+    class com.berco.damka_final_game.GameRules {
+        + onClickBack()
+        # onCreate()
+    }
+  }
+  
+
+  namespace com.berco.damka_final_game {
+    class com.berco.damka_final_game.GamesAdapter {
+        - context : Context
+        - games : List<Game>
+        + GamesAdapter()
+        + getView()
+    }
+  }
+  
+
+  namespace com.berco.damka_final_game {
+    class com.berco.damka_final_game.GamesList {
+        ~ btnBack : Button
+        ~ lv : ListView
+        + onClickBack()
+        + onItemClick()
+        # onCreate()
+    }
+  }
+  
+
+  namespace com.berco.damka_final_game {
+    class com.berco.damka_final_game.IntroPage {
+        - board : ImageView
+        - button1 : Button
+        - button2 : Button
+        - musicIntent : Intent
+        - permissions : String[]
+        - tv1 : TextView
+        - tv2 : TextView
+        + onClick()
+        + onCreateOptionsMenu()
+        + onOptionsItemSelected()
+        # onCreate()
+        - checkAndRequestPermissions()
+    }
+  }
+  
+
+  namespace com.berco.damka_final_game {
+    class com.berco.damka_final_game.MainActivity {
+        ~ broadCastBatteryLow : BroadcastReceiver
+        ~ phoneCallRec : BroadcastReceiver
+        - d : Dialog
+        - firstPlace : int
+        - firstView : ImageButton
+        - flag : Switch
+        - ilMain : LinearLayout
+        - musicIntent : Intent
+        - rows : RelativeLayout[]
+        - sub : Button
+        - tts : TextToSpeech
+        - turnOf : LinearLayout
+        + copyModelToView()
+        + createBatteryLowDialog()
+        + createEndGameDialog()
+        + createPhoneCallDialog()
+        + onClick()
+        + onClickBack()
+        + onClickPon()
+        + onCreateOptionsMenu()
+        + onOptionsItemSelected()
+        # onCreate()
+        # onDestroy()
+        - switchTurnOf()
+    }
+  }
+  
+
+  namespace com.berco.damka_final_game {
+    class com.berco.damka_final_game.Model {
+        {static} + SIZE : int
+        - board : Pon[][]
+        - steps : int
+        - winner : char
+        + Model()
+        + gameOver()
+        + getBoard()
+        + getSteps()
+        + getWinner()
+        + movePlayer()
+        + startGame()
+    }
+  }
+  
+
+  namespace com.berco.damka_final_game {
+    class com.berco.damka_final_game.MusicServise {
+        ~ player : MediaPlayer
+        + onBind()
+        + onCreate()
+        + onDestroy()
+        + onStartCommand()
+    }
+  }
+  
+
+  namespace com.berco.damka_final_game {
+    class com.berco.damka_final_game.Player {
+        - Email : String
+        - gender : String
+        - name : String
+        + Player()
+        + equals()
+        + getEmail()
+        + getName()
+        + toString()
+    }
+  }
+  
+
+  namespace com.berco.damka_final_game {
+    class com.berco.damka_final_game.Pon {
+        - color : char
+        - empty : boolean
+        + Pon()
+        + clone()
+        + getColor()
+        + isEmpty()
+        + makeQueen()
+        + move()
+        + setColor()
+        + setEmpty()
+    }
+  }
+  
+
+  namespace com.berco.damka_final_game {
+    class com.berco.damka_final_game.Queen {
+        + Queen()
+        + checkQueenDir()
+        + move()
+    }
+  }
+  
+
+  namespace com.berco.damka_final_game {
+    class com.berco.damka_final_game.SaveSettings {
+        - FN : String
+        - MUSIC : String
+        - SOUND : String
+        - VIB : String
+        - bMusic : boolean
+        - bSound : boolean
+        - bVibrate : boolean
+        - sp : SharedPreferences
+        + SaveSettings()
+        + isMusic()
+        + isSound()
+        + isVibrate()
+        + save()
+        + setMusic()
+        + setSound()
+        + setVibration()
+    }
+  }
+  
+
+  namespace com.berco.damka_final_game {
+    class com.berco.damka_final_game.SettingsActivity {
+        - music : Switch
+        - musicIntent : Intent
+        - picSetting : ImageView
+        - sound : Switch
+        - startMusic : boolean
+        - vibration : Switch
+        - vibrator : Vibrator
+        + ok()
+        + onCheckedChanged()
+        # onCreate()
+    }
+  }
+  
+
+  namespace com.berco.damka_final_game {
+    class com.berco.damka_final_game.ShareActivity {
+        - btn1 : Button
+        - btn2 : Button
+        - btn3 : Button
+        - et1 : EditText
+        - permissions : String[]
+        + onClick()
+        + onClickBack()
+        # onCreate()
+        - checkAndRequestPermissions()
+    }
+  }
+  
+
+  namespace com.berco.damka_final_game {
+    class com.berco.damka_final_game.SoundControl {
+        - bombid : int
+        {static} - disabled : boolean
+        - soundpool : SoundPool
+        - tts : TextToSpeech
+        + SoundControl()
+        + playBomb()
+        + playTextSaved()
+        + playTextSecondPlayer()
+        + setDisabled()
+    }
+  }
+  
+
+  com.berco.damka_final_game.Controller o-- com.berco.damka_final_game.Model : model
+  com.berco.damka_final_game.CurrentPlayers .up.|> android.view.View.OnClickListener
+  com.berco.damka_final_game.CurrentPlayers .up.|> com.berco.damka_final_game.BackAble
+  com.berco.damka_final_game.CurrentPlayers -up-|> androidx.appcompat.app.AppCompatActivity
+  com.berco.damka_final_game.CurrentPlayers o-- com.berco.damka_final_game.SoundControl : sc
+  com.berco.damka_final_game.Game .up.|> java.lang.Comparable
+  com.berco.damka_final_game.GameDataBase -up-|> android.database.sqlite.SQLiteOpenHelper
+  com.berco.damka_final_game.GameRules .up.|> com.berco.damka_final_game.BackAble
+  com.berco.damka_final_game.GameRules -up-|> androidx.appcompat.app.AppCompatActivity
+  com.berco.damka_final_game.GamesAdapter -up-|> android.widget.ArrayAdapter
+  com.berco.damka_final_game.GamesList .up.|> android.widget.AdapterView.OnItemClickListener
+  com.berco.damka_final_game.GamesList .up.|> com.berco.damka_final_game.BackAble
+  com.berco.damka_final_game.GamesList -up-|> androidx.appcompat.app.AppCompatActivity
+  com.berco.damka_final_game.GamesList o-- com.berco.damka_final_game.GamesAdapter : adapter
+  com.berco.damka_final_game.GamesList o-- com.berco.damka_final_game.GameDataBase : g
+  com.berco.damka_final_game.IntroPage .up.|> android.view.View.OnClickListener
+  com.berco.damka_final_game.IntroPage -up-|> androidx.appcompat.app.AppCompatActivity
+  com.berco.damka_final_game.IntroPage o-- com.berco.damka_final_game.SaveSettings : s
+  com.berco.damka_final_game.MainActivity .up.|> android.view.View.OnClickListener
+  com.berco.damka_final_game.MainActivity .up.|> com.berco.damka_final_game.BackAble
+  com.berco.damka_final_game.MainActivity -up-|> androidx.appcompat.app.AppCompatActivity
+  com.berco.damka_final_game.MainActivity o-- com.berco.damka_final_game.Controller : c
+  com.berco.damka_final_game.MusicServise -up-|> android.app.Service
+  com.berco.damka_final_game.Pon .up.|> java.lang.Cloneable
+  com.berco.damka_final_game.Queen .up.|> java.lang.Cloneable
+  com.berco.damka_final_game.Queen -up-|> com.berco.damka_final_game.Pon
+  com.berco.damka_final_game.SettingsActivity .up.|> android.widget.CompoundButton.OnCheckedChangeListener
+  com.berco.damka_final_game.SettingsActivity -up-|> androidx.appcompat.app.AppCompatActivity
+  com.berco.damka_final_game.SettingsActivity o-- com.berco.damka_final_game.MusicServise : ms
+  com.berco.damka_final_game.SettingsActivity o-- com.berco.damka_final_game.SoundControl : sc
+  com.berco.damka_final_game.SettingsActivity o-- com.berco.damka_final_game.SaveSettings : settings
+  com.berco.damka_final_game.ShareActivity .up.|> android.view.View.OnClickListener
+  com.berco.damka_final_game.ShareActivity .up.|> com.berco.damka_final_game.BackAble
+  com.berco.damka_final_game.ShareActivity -up-|> androidx.appcompat.app.AppCompatActivity
+  com.berco.damka_final_game.SoundControl o-- com.berco.damka_final_game.SaveSettings : s
+
+
+right footer
+
+
+PlantUML diagram generated by SketchIt! (https://bitbucket.org/pmesmeur/sketch.it)
+For more information about this tool, please contact philippe.mesmeur@gmail.com
+endfooter
+
+@enduml

@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/picture2"
+    tools:context=".CurrentPlayers">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="Players are:"
+        android:textSize="25dp"
+        android:gravity="center_vertical"
+        android:textStyle="bold"
+        android:id="@+id/text1"
+        android:layout_centerHorizontal="true"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Insert details for both players"
+        android:textAlignment="center"
+        android:textSize="15dp"
+        android:id="@+id/text2"
+        android:layout_below="@+id/text1"
+        android:layout_centerHorizontal="true"/>
+
+    <EditText
+        android:id="@+id/name1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:layout_marginTop="15dp"
+        android:layout_below="@+id/text2"
+        android:inputType="textPersonName"
+        android:layout_centerHorizontal="true"
+        android:text="Full Name"
+        />
+
+    <RadioGroup
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/gender1"
+        android:layout_below="@+id/name1"
+        android:layout_centerHorizontal="true"
+        android:orientation="horizontal">
+        <RadioButton android:id="@+id/male1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="70dp"
+            android:text="male"/>
+        <RadioButton android:id="@+id/female1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="female" />
+        <RadioButton android:id="@+id/toaster1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="true"
+            android:text="toaster" />
+    </RadioGroup>
+
+    <EditText
+        android:id="@+id/EmailAddress1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/gender1"
+        android:text="email"
+        android:ems="10"
+        android:inputType="textEmailAddress" />
+
+    <ImageView
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:src="@drawable/anonimic_image"
+        android:layout_below="@+id/EmailAddress1"
+        android:id="@+id/pic1"
+        android:layout_centerHorizontal="true"
+        />
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:text="change pic"
+        android:layout_below="@id/EmailAddress1"
+        android:layout_toRightOf="@id/pic1"
+        android:background="#0000"
+        android:id="@+id/chPic1"/>
+
+    <EditText
+        android:id="@+id/name2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:layout_below="@+id/pic1"
+        android:inputType="textPersonName"
+        android:layout_centerHorizontal="true"
+        android:text="Full Name" />
+
+    <RadioGroup
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/gender2"
+        android:layout_below="@+id/name2"
+        android:layout_centerHorizontal="true"
+        android:orientation="horizontal">
+        <RadioButton android:id="@+id/male2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="70dp"
+            android:text="male"/>
+        <RadioButton android:id="@+id/female2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="female" />
+        <RadioButton android:id="@+id/toaster2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="true"
+            android:text="toaster" />
+    </RadioGroup>
+
+    <EditText
+        android:id="@+id/EmailAddress2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/gender2"
+        android:text="email"
+        android:ems="10"
+        android:inputType="textEmailAddress" />
+
+    <ImageView
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:src="@drawable/anonimic_image"
+        android:layout_below="@+id/EmailAddress2"
+        android:id="@+id/pic2"
+        android:layout_centerHorizontal="true"
+        />
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:text="change pic"
+        android:layout_below="@id/EmailAddress2"
+        android:layout_toRightOf="@id/pic2"
+        android:background="#0000"
+        android:id="@+id/chPic2"/>
+
+    <Button
+        android:id="@+id/submit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:layout_below="@+id/pic2"
+        android:background="#0000"
+        android:text="submit" />
+    <Button
+        android:id="@+id/back"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:onClick="onClickBack"
+        android:layout_below="@+id/pic2"
+        android:layout_toRightOf="@+id/submit"
+        android:background="#0000"
+        android:text="back" />
+
+</RelativeLayout>

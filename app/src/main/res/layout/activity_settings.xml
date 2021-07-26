@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/picture2"
+    tools:context=".SettingsActivity">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:text="Settings"
+        android:layout_marginTop="30dp"
+        android:textColor="#000"
+        android:textSize="30dp"
+        android:textStyle="bold"/>
+    <Switch
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/sound"
+        android:layout_gravity="center_horizontal"
+        android:drawableStart="@drawable/ic_sound"
+        android:text=" sound"
+        android:textSize="25dp"/>
+    <Switch
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/vibration"
+        android:drawableStart="@drawable/ic_vibration"
+        android:text=" vibration"
+        android:layout_gravity="center_horizontal"
+        android:textSize="25dp"/>
+    <Switch
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/music"
+        android:text=" music"
+        android:drawableStart="@drawable/ic_video"
+        android:layout_gravity="center_horizontal"
+        android:textSize="25dp"/>
+
+
+    <Button
+        android:layout_width="50dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:background="#0000"
+        android:onClick="ok"
+        android:layout_marginTop="30dp"
+        android:textColor="#190202"
+        android:text="ok"
+        android:textSize="15dp"/>
+
+
+    <ImageView
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginTop="100dp"
+        android:id="@+id/picSetting"
+        android:layout_gravity="center_horizontal"
+        android:src="@drawable/settings"/>
+</LinearLayout>

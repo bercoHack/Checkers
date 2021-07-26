@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/picture2"
+    tools:context=".GameRules">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:textColor="#000"
+        android:textSize="30dp"
+        android:textStyle="bold"
+        android:text="game rules" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="385dp"
+        android:layout_marginLeft="18dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="18dp"
+        android:text="As you probably understood by now the game is about checkers. \n Basically the main idea is to 'eat' the other players pons by moving diagonally and eating players by 'jumping' above them\n
+When a pon reaches the other player's side of the board this pon becomes a queen for white or a king for black both of them has the same special abilities, wich allows them to go back in the board, move for more then one spot at a time
+and 'eat' more then one player at a time that are one the same diagonal line, but only if there is at least on empty spot between them.
+\n So have fun playing and fell free to contact us at the contact us page."
+        android:textColor="#000"
+        android:textSize="18dp" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_marginTop="30dp"
+        android:onClick="onClickBack"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:textSize="20dp"
+        android:text="back"
+        android:background="#0000"/>
+</LinearLayout>

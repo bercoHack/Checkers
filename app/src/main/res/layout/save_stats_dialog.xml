@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="wrap_content"
+    android:layout_height="120dp"
+    android:background="@drawable/picture2">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="17dp"
+        android:layout_gravity="center_horizontal"
+        android:text="would you like to save the stats of this game?"
+        android:textColor="#000" />
+    <Switch
+        android:layout_width="wrap_content"
+        android:id="@+id/flag"
+        android:checked="true"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:text="switch right for yes and left for no"
+        android:textColor="#5E5C5C"/>
+    <Button
+        android:layout_width="wrap_content"
+        android:id="@+id/sub"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:backgroundTint="#0000"
+        android:text="submit"/>
+
+
+
+</LinearLayout>
